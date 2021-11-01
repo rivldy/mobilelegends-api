@@ -3,8 +3,13 @@ const cors = require("cors")
 const mongoose = require("mongoose")
 const bodyParser = require("body-parser")
 
+// Authentication
+require("dotenv").config()
+const app = require("./app")
+const auth = require("./middleware/auth")
+
 // Create Express
-const app = express()
+// const app = express()
 
 // Database
 const dbUrl = process.env.DB || "mongodb://localhost/mobilelegends-api"
@@ -32,7 +37,7 @@ app.get("/", (req, res) => {
 
 const ItemsRoutes = require("./routes/Items")
 
-app.use("/items", ItemsRoutes)
+app.use("/items", auth, ItemsRoutes)
 
 // Starting Server
 const PORT = process.env.PORT || 3000
