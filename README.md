@@ -2,6 +2,55 @@
 
 Mobile Legends Unofficial Rest API build with Express and MongoDB database.
 
+## Get a Token
+
+You can't access this API without `token`, so you need to register an account to get your own token.
+
+You need some input to be sent to `http://localhost:3000/register`.
+
+```json
+{
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "johndoe76@gmail.com",
+  "password": "itsjohndoe"
+}
+```
+
+**Note**: Don't forget to change your HTTP Request to `POST`, and URL to `http://localhost:3000/register` before sending the user form.
+
+After that, server will response with this
+
+```json
+{
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "johndoe76@gmail.com",
+  "password": "[encrypted password]",
+  "_id": "[random id]",
+  "__v": 0,
+  "token": "[generated token]"
+}
+```
+
+The token is only valid for 2 hours, after which the token will expire. To get tokens again, you have to Login.
+
+You need to send Email and Password to `http://localhost:3000/login`. And the server will respond with this.
+
+```json
+{
+  "_id": "[random id]",
+  "first_name": "John",
+  "last_name": "Doe",
+  "email": "johndoe76@gmail.com",
+  "password": "[encrypted password]",
+  "__v": 0,
+  "token": "[new generated token]"
+}
+```
+
+Well you got a new token :).
+
 ## Documentation
 
 There is bunch of routes and methods, see all of them below.
