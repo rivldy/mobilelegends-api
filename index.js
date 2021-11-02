@@ -32,12 +32,20 @@ app.use(bodyParser.json())
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Hello World!")
+  res.send(
+    "Welcome to Mobile Legends API. Read the documentation in https://github.com/rivldy/mobilelegends-api.herokuapp.com"
+  )
+})
+
+app.get("/api", (req, res) => {
+  res.send(
+    "Welcome to Mobile Legends API. Read the documentation in https://github.com/rivldy/mobilelegends-api.herokuapp.com"
+  )
 })
 
 const ItemsRoutes = require("./routes/Items")
 
-app.use("/items", auth, ItemsRoutes)
+app.use("/api/items", auth, ItemsRoutes)
 
 // Starting Server
 const PORT = process.env.PORT || 3000
