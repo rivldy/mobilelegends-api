@@ -58,7 +58,7 @@ There is bunch of routes and methods, see all of them below.
 - ### Get All Items
 
 ```
-http://localhost:3000/items
+http://localhost:3000/api/items
 ```
 
 **Note**: `localhost:3000` is your local address and port `3000` is the default.
@@ -88,7 +88,7 @@ But if you have `POST` items to the database (we will discuss later), then the r
 - ### Get Specific item by `id_name`
 
 ```
-http://localhost:3000/items/get/:id_name
+http://localhost:3000/api/items/get/:id_name
 ```
 
 `:id_name` is parameter to get item based on `id_name` which is same as parameter.
@@ -116,7 +116,7 @@ http://localhost:3000/items/get/:id_name
 - ### Get items by `category`
 
 ```
-http://localhost:3000/items/category/:category
+http://localhost:3000/api/items/category/:category
 ```
 
 **Note**: Same as above, `:category` is parameter.
@@ -157,7 +157,7 @@ http://localhost:3000/items/category/:category
 - ### Post Items
 
 ```
-http://localhost:3000/items/new
+http://localhost:3000/api/items/new
 ```
 
 **Note**: Make sure you change the http request method to `POST`.
@@ -182,7 +182,7 @@ This route requires data in the form of json. This data can be created with [Pos
 - ### Delete an item
 
 ```
-http://localhost:3000/items/delete/:id_name
+http://localhost:3000/api/items/delete/:id_name
 ```
 
 **Note**: Make sure you change the http request method to `DELETE`.
@@ -190,7 +190,7 @@ http://localhost:3000/items/delete/:id_name
 - ### Update an item
 
 ```
-http://localhost:3000/items/update/:id_name
+http://localhost:3000/api/items/update/:id_name
 ```
 
 **Note**: Make sure you change the http request method to `PATCH`.
